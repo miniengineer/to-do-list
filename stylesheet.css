@@ -1,0 +1,63 @@
+html, body {
+  font-family: Courier;
+  background-color: #f8eff6;
+}
+
+/* to do list */
+
+div.container {
+  height: 800px;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  padding: 10px;
+  background-image: url("images/pusheen-background.jpg");
+  border-radius: 50px;
+  border: #caeae3 solid 10px;
+  box-shadow: 4px 3px 7px 2px #00000040;
+  text-align: center;
+}
+
+/* class to add to cross out task before deleting it */
+
+.delete-text {
+  text-decoration: line-through;
+}
+
+/* to get rid of bullets  */
+
+li {
+  list-style: none;
+}
+
+button {
+  border-radius: 30px;
+}
+
+.task-item {
+  text-align: left;
+}
+
+/* For floating img and "Any tasks?" */
+
+.image {
+  width: 200px;
+  display: block;
+  float: left;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+/* .to-do-label {
+  width: 200px;
+  display: block;
+  float: right;
+  margin-right: 300px;
+  margin-top: 40px;
+} */
+
+.task-list {
+  margin-top: 80px;
+  margin-right: 80px;
+}
