@@ -17,7 +17,7 @@ $(".add-task").click( function() {
   //clear imputted value
   $("#input").val(" ");
   $li.find("input.done").click( function() {
-    $li.addClass("delete-text");
+    $li.addClass("cross-out-text");
     setTimeout(function (){
       $li.addClass(".done").remove();
     },800);

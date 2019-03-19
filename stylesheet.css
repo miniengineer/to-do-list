@@ -21,7 +21,7 @@ div.container {
 
 /* class to add to cross out task before deleting it */
 
-.delete-text {
+.cross-out-text {
   text-decoration: line-through;
 }
 
@@ -35,11 +35,7 @@ button {
   border-radius: 30px;
 }
 
-.task-item {
-  text-align: left;
-}
-
-/* For floating img and "Any tasks?" */
+/* For floating img*/
 
 .image {
   width: 200px;
@@ -49,15 +45,18 @@ button {
   margin-top: 30px;
 }
 
-/* .to-do-label {
-  width: 200px;
-  display: block;
-  float: right;
-  margin-right: 300px;
-  margin-top: 40px;
-} */
 
-.task-list {
+/* Align task input with pusheen  */
+
+.input-task {
   margin-top: 80px;
   margin-right: 80px;
+}
+
+/* Added tasks list styles */
+
+.task-list {
+  text-align: left;
+  margin-top: 120px;
+  margin-left: 100px;
 }
