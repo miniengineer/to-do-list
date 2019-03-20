@@ -1,6 +1,6 @@
 html, body {
   font-family: Courier;
-  background-color: #f8eff6;
+  background-color: #77b2c9;
 }
 
 /* to do list */
@@ -13,8 +13,8 @@ div.container {
   margin-bottom: 150px;
   padding: 10px;
   background-image: url("images/pusheen-background.jpg");
-  border-radius: 50px;
-  border: #caeae3 solid 10px;
+  border-radius: 50px 0 0 50px;
+  border: white solid 10px;
   box-shadow: 4px 3px 7px 2px #00000040;
   text-align: center;
 }
@@ -25,14 +25,10 @@ div.container {
   text-decoration: line-through;
 }
 
-/* to get rid of bullets  */
+/* to get rid of bullets un unordered list  */
 
 li {
   list-style: none;
-}
-
-button {
-  border-radius: 30px;
 }
 
 /* For floating img*/
@@ -59,4 +55,20 @@ button {
   text-align: left;
   margin-top: 120px;
   margin-left: 100px;
+}
+
+/* For Placeholder Fade */
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: text-indent 1.5s 2s ease;
+  text-indent: -100%;
+  opacity: 1;
+}
+
+/* styling input field */
+
+#input {
+  background-color: transparent;
+  border: none;
+  border-bottom: solid yellow;
 }
