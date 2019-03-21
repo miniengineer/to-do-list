@@ -1,25 +1,37 @@
-// $(".add-task").click( function() {
-//   $("#list").prepend("<li class=\"task-item\"><input type=\"checkbox\" class=\"done\"></button>" + $("#input").val() + "</li>");
-//   $("input.done").click( function() {
-//     console.log('Adding class');
-//     var $todo = $(this).closest('li');
-//     $todo.addClass("delete-text");
-//     setTimeout(function (){
-//       console.log('Removing a todo');
-//       $todo.addClass(".done").remove();
-//     },800);
-//   });
-// });
+//Press enter to add new task
 
-$(".add-task").click( function() {
-  var $li = $("<li class=\"task-item\"><input type=\"checkbox\" class=\"done\"></button>" + $("#input").val() + "</li>");
+function addToDo() {
+  var $li = $("<li class=\"task-item\"><input type=\"checkbox\" class=\"checkbox\"></button>" + "<p class=\"new-task\">" + $("#input").val() + "</p>" + "</li>");
+  //put it in the beginning of list
   $("#list").prepend($li);
   //clear imputted value
-  $("#input").val(" ");
-  $li.find("input.done").click( function() {
-    $li.addClass("delete-text");
+  $("#input").val("");
+  //delete task when clicked on
+  $li.find("p.new-task").click( function() {
+    $li.addClass("cross-out-text");
     setTimeout(function (){
-      $li.addClass(".done").remove();
+      $li.addClass(".checkbox").remove();
     },800);
   });
+//Move tasks to Done section when checked
+$li.find("input.checkbox").click( function() {
+  $li.prependTo("#done-tasks-list");
+});
+};
+
+
+
+$("#input").keypress( function() {
+  //trigger if the key is enter
+  if( event.type == "keypress" && event.which === 13 ) {
+    //add new task
+    addToDo();
+ };
+});
+
+//Press button to add new task
+
+$(".add-task").click( function() {
+    //add new task
+    addToDo();
 });
