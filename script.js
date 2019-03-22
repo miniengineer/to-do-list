@@ -18,13 +18,13 @@ function addToDo() {
   };
   //add task to the array, so we can track it
   ToDo.push({taskTitle: $("#input").val(), isDone: false });
-  var $li = $("<li class=\"task-item\"><input type=\"checkbox\" class=\"checkbox\">" + "<p class=\"new-task\">" + $("#input").val() + "</p>" + "</li>");
+  var $li = $("<li class=\"task-item\"><label><input type=\"checkbox\" class=\"checkbox\"><span class=\"new-task\">" + $("#input").val() + "</span></label></li>");
   //put it in the beginning of list
   $("#list").prepend($li);
   //clear imputted value
   $("#input").val("");
   //delete task when clicked on
-  $li.find("p.new-task").click( function() {
+  $li.find(".new-task").click( function() {
     //find and delete task from array
     memo = $li.text();
     index = ToDo.findIndex(function(e) {
