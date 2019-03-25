@@ -19,6 +19,8 @@ div.container {
   text-align: center;
 }
 
+
+
 /* class to add to cross out task before deleting it */
 
 .cross-out-text {
@@ -60,7 +62,7 @@ li {
 /* For Placeholder Fade */
 
 [placeholder]:focus::-webkit-input-placeholder {
-  transition: text-indent 0.5s 0.5s ease;
+  transition: text-indent 0.5s 0.s ease;
   text-indent: -100%;
   opacity: 1;
 }
@@ -73,4 +75,10 @@ li {
   border-bottom: solid yellow;
 }
 
-.button {}
+/* align icons with text */
+
+.icon {
+  position: relative;
+  top: 10px;
+  left: 5px;
+}

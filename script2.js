@@ -19,16 +19,16 @@ var lastTaskId = 0;
 
 function addTask(task) {
   allTasks.push({title: task, isDone: false, id: lastTaskId++});
-  $("#input").val("");
   render();
+  $("#input").val("");
 }
 
 function render() {
-  $("#tasks").empty();
+  $("#tasks, #done-tasks-list").empty();
   for(var i = 0; i < allTasks.length; i++) {
     if(allTasks[i].isDone === true) {
       $("#done-tasks-list").prepend(`<li data-id="${allTasks[i].id}" class="task"><label>
-      <input type="image" src="images/done-icon.png"> 
+      <input type="image" src="images/done-icon.svg" class="icon">
       <span class="new-task"> ${allTasks[i].title} </span></label></li>`);
 
     } else {
