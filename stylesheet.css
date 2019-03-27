@@ -3,7 +3,7 @@ html, body {
   background-color: #77b2c9;
 }
 
-/* to do list */
+/* main container */
 
 div.container {
   height: 800px;
@@ -20,10 +20,9 @@ div.container {
 }
 
 
-
 /* class to add to cross out task before deleting it */
 
-.cross-out-text {
+.new-task:hover {
   text-decoration: line-through;
 }
 
@@ -33,7 +32,7 @@ li {
   list-style: none;
 }
 
-/* For floating img*/
+/* for floating img*/
 
 .image {
   width: 200px;
@@ -44,14 +43,14 @@ li {
 }
 
 
-/* Align task input with pusheen  */
+/* align task input with pusheen  */
 
 .input-task {
   margin-top: 80px;
   margin-right: 80px;
 }
 
-/* Added tasks list styles */
+/* tasks list styles */
 
 .task-list {
   text-align: left;
@@ -59,7 +58,7 @@ li {
   margin-left: 100px;
 }
 
-/* For Placeholder Fade */
+/* for Placeholder Fade */
 
 [placeholder]:focus::-webkit-input-placeholder {
   transition: text-indent 0.5s 0.s ease;
@@ -67,12 +66,16 @@ li {
   opacity: 1;
 }
 
-/* styling input field */
+/* styling task input field */
 
 #input {
   background-color: transparent;
   border: none;
   border-bottom: solid yellow;
+}
+
+#input:focus {
+  outline: none;
 }
 
 /* align icons with text */
@@ -81,4 +84,8 @@ li {
   position: relative;
   top: 10px;
   left: 5px;
+}
+
+.icon:focus {
+  outline: none;
 }
