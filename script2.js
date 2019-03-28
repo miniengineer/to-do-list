@@ -29,7 +29,7 @@ function addTask(task) {
   //get rid of white space
   task = task.trim();
   //check if task already exists in to-do list
-  let currentTask = allTasks.find(e => e.title === task && e.status === false);
+  let currentTask = allTasks.find(e => e.title === task && e.isDone === false);
   if(currentTask !== undefined) {
     return alert("This task already exists");
   } else {
@@ -47,7 +47,7 @@ function render() {
   //decide whether it's done or a new task and prepend accordingly
   for(var i = 0; i < allTasks.length; i++) {
     //if task is checked move to done section
-    if(allTasks[i].status === true) {
+    if(allTasks[i].isDone === true) {
       $("#done-tasks-list").prepend(`<li data-id="${allTasks[i].id}" class="task"><label>
       <input type="image" src="images/done-icon.svg" class="icon">
       <span class="new-task"> ${allTasks[i].title} </span></label></li>`);
@@ -62,7 +62,7 @@ function render() {
   $("li.task .checkbox").click(function(e) {
     var id = $(this).closest(".task").data("id");
     var thisTask = allTasks.find(e => e.id == id);
-    thisTask.status = true;
+    thisTask.isDone = true;
     render();
   });
   //add click event to remove task
