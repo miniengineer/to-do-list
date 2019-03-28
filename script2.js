@@ -29,11 +29,11 @@ function addTask(task) {
   //get rid of white space
   task = task.trim();
   //check if task already exists in to-do list
-  let currentTask = allTasks.find(e => e.title === task && e.status === "toDo");
+  let currentTask = allTasks.find(e => e.title === task && e.status === false);
   if(currentTask !== undefined) {
     return alert("This task already exists");
   } else {
-    allTasks.push({title: task, status: "toDo", id: lastTaskId++});
+    allTasks.push({title: task, isDone: false, id: lastTaskId++});
     render();
     $("#input").val("");
   }
@@ -47,31 +47,27 @@ function render() {
   //decide whether it's done or a new task and prepend accordingly
   for(var i = 0; i < allTasks.length; i++) {
     //if task is checked move to done section
-    if(allTasks[i].status === "done") {
+    if(allTasks[i].status === true) {
       $("#done-tasks-list").prepend(`<li data-id="${allTasks[i].id}" class="task"><label>
       <input type="image" src="images/done-icon.svg" class="icon">
       <span class="new-task"> ${allTasks[i].title} </span></label></li>`);
-    } else if(allTasks[i].status === "toDo") {
-      //if it's new move to to-do-list
+    } else {
+      //if it's new, move to to-do-list
       $("#tasks").prepend(`<li data-id="${allTasks[i].id}" class="task"><label>
       <input type="checkbox" class="checkbox">
       <span class="new-task"> ${allTasks[i].title} </span></label></li>`);
     }
   };
-  // move to done section when checked
+  // add click event to change status to done
   $("li.task .checkbox").click(function(e) {
     var id = $(this).closest(".task").data("id");
     var thisTask = allTasks.find(e => e.id == id);
-    thisTask.status = "done";
+    thisTask.status = true;
     render();
   });
-  //remove task when clicked on
+  //add click event to remove task
   $(".new-task").click(function(e) {
-    var id = $(this).closest(".task").data("id");
-    var thisTask = allTasks.find(e => e.id == id);
-    thisTask.status = "toDeletion";
-    //don't forget to remove it from array of tasks
-    allTasks.splice(allTasks.indexOf(thisTask),1);
+    allTasks.splice(allTasks.indexOf(this),1);
     render();
   });
 }
