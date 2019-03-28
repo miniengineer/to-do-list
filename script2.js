@@ -29,9 +29,7 @@ function addTask(task) {
   //get rid of white space
   task = task.trim();
   //check if task already exists in to-do list
-  let currentTask = allTasks.find(function(e) {
-    return e.title === task && e.status === "toDo";
-  });
+  let currentTask = allTasks.find(e => e.title === task && e.status === "toDo");
   if(currentTask !== undefined) {
     return alert("This task already exists");
   } else {
@@ -63,18 +61,14 @@ function render() {
   // move to done section when checked
   $("li.task .checkbox").click(function(e) {
     var id = $(this).closest(".task").data("id");
-    var thisTask = allTasks.find(function(e) {
-      return e.id == id;
-    });
+    var thisTask = allTasks.find(e => e.id == id);
     thisTask.status = "done";
     render();
   });
   //remove task when clicked on
   $(".new-task").click(function(e) {
     var id = $(this).closest(".task").data("id");
-    var thisTask = allTasks.find(function(e) {
-      return e.id == id;
-    });
+    var thisTask = allTasks.find(e => e.id == id);
     thisTask.status = "toDeletion";
     //don't forget to remove it from array of tasks
     allTasks.splice(allTasks.indexOf(thisTask),1);

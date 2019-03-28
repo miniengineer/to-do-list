@@ -11,7 +11,6 @@ function addToDo() {
     alert("Please enter a task");
   };
   var task = $("#input").val();
-  console.log(task);
   //edge case to check if the task already exist
   for(var i = 0; i < ToDo.length; i++) {
     if( $("#input").val() === ToDo[i].taskTitle ) {
