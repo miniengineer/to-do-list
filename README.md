@@ -30,3 +30,6 @@ If you wish to delete a task, just hover the cursor on a task and when you see t
 If you've completed a task, just click on its checkbox and it will appear under the 'Done' section. 
 
 ![done-task](https://github.com/miniengineer/to-do-list/blob/master/images/done_task.png)
+
+
+# THE END
